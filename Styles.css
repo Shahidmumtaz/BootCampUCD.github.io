@@ -1,3 +1,21 @@
+body {
+  background-color: #eeeeee;
+}
+
+#container {
+  background-color: whitesmoke;
+}
+
+#header {
+  background-color: teal;
+  text-align: left;
+  color: whitesmoke;
+}
+
 h1 {
-    background-color: blueviolet;
+  background-color: rgb(43, 226, 217);
+  box-shadow: cadetblue;
+}
+p {
+  text-align: center;
 }
