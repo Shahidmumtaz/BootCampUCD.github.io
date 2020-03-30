@@ -7,6 +7,7 @@
 
 body {
   background-color: aquamarine;
+  overflow-x: hidden;
 }
 
 #container {
@@ -25,12 +26,15 @@ body {
 a {
   font-size: 20px;
   text-align: top;
-  color: teal;
+  color: white;
+  background-color: teal;
+  width: auto;
 }
 
 a:hover {
   font-size: 30px;
-  color: blue;
+  font-weight: bold;
+  color: White;
 }
 
 h1 {
