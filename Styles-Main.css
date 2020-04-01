@@ -13,6 +13,7 @@
   margin: 20px;
   margin-right: 0;
   font-weight: bold;
+  left: 0;
 }
 
 /*  Body Web Page Characteristics */
@@ -26,11 +27,14 @@ body {
 nav {
   float: right;
   margin-right: 0;
+  margin-top: 0;
+  margin: 0;
 }
 
 /*  "nav ul" Tag Characteristics */
 nav ul {
   margin: 0;
+  margin-top: 0;
   padding: 0;
   list-style: none;
 }
@@ -38,8 +42,11 @@ nav ul {
 /*  "nav li" Tag Characteristics */
 nav li {
   display: inline-block;
-  margin: 10px;
+  margin: 0;
+  margin-right: 20px;
+  margin-top: 0;
   padding-top: 0;
+  padding-right: 0;
   position: relative;
 }
 
@@ -56,22 +63,49 @@ nav a {
 }
 
 /*  "nav a:hover" Tag pseudo class Characteristics */
-nav ul li a:hover {
+/*nav ul li a:hover {
   font-size: 30px;
   font-weight: bold;
   color: teal;
   font-weight: 900;
   transition: all ease-in-out 1000ms;
-}
+}*/
 
-nav a:hover::before {
+/*nav a::before {
+  direction: rtl;
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0%;
+  background-color: teal;
+  position: absolute;
+  top: 0;
+  transition: all ease-in-out 750ms;
+}*/
+
+/*nav a::after {
+  direction: rtl;
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0%;
+  background-color: red;
+  position: absolute;
+  bottom: 0;
+  transition: all ease-in-out 750ms;
+}*/
+
+/*nav a:hover::before {
   content: "";
   display: block;
   height: 3px;
   width: 100%;
   background-color: teal;
   position: absolute;
-}
+  top: 0;
+  transition: all ease-in-out 7750ms;
+  direction: rtl;
+}*/
 
 nav a:hover::after {
   content: "";
@@ -80,6 +114,9 @@ nav a:hover::after {
   width: 100%;
   background-color: teal;
   position: absolute;
+  bottom: 0;
+  transition: all ease-in-out 7750ms;
+  direction; rtl;
 }
 
 /*  Paragraph Web Page Characteristics */
@@ -87,10 +124,12 @@ p {
   text-align: center;
   color: red;
   font-size: 45px;
+  margin-top: 50px;
 }
 
 /*  "Heading 1" Web Page Characteristics */
 h1 {
+  text-transform: capitalize;
   font-size: 20px;
   color: teal;
   font-style: oblique;
@@ -99,24 +138,27 @@ h1 {
 
 /*  "Heading 2" Web Page Characteristics */
 h2 {
+  text-align: left;
   color: peru;
+  margin-left: 15px;
+  margin-top: 10px;
 }
 
 /*  Class "container" Characteristics */
-.container {
+/*.container {
   width: 80%;
   margin: 0 auto;
   color: yellow;
-}
+}*/
 
 /*  Psuedo "header::after" Characteristics */
-header::before {
+/*header::before {
   content: "";
   display: block;
   height: 5px;
   width: 100%;
   background-color: #444;
-}
+}*/
 
 /*  Psuedo "header::after" Characteristics */
 header::after {
