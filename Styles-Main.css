@@ -1,3 +1,4 @@
+/*  Universal Web Page Characteristics */
 * {
   padding: 0;
   margin: 0;
@@ -5,51 +6,121 @@
   font-family: sans-serif, Arial, Helvetica, sans-serif;
 }
 
+/*  ID "title" Characteristics */
+#title {
+  font-size: 20px;
+  color: teal;
+  margin: 20px;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+/*  Body Web Page Characteristics */
 body {
   background-color: aquamarine;
   overflow-x: hidden;
+  font-weight: 400;
 }
 
-#container {
-  background-color: black;
+/*  "nav" Tag Characteristics */
+nav {
+  float: right;
+  margin-right: 0;
 }
 
-#header {
-  background-color: teal;
-  text-align: center;
-  color: white;
-  font-size: 50px;
-  width: auto;
-  margin: 0 auto;
+/*  "nav ul" Tag Characteristics */
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-a {
+/*  "nav li" Tag Characteristics */
+nav li {
+  display: inline-block;
+  margin: 10px;
+  padding-top: 0;
+  position: relative;
+}
+
+/*  "nav a" Tag Characteristics */
+nav a {
+  text-decoration: none;
+  text-transform: uppercase;
   font-size: 20px;
-  text-align: top;
-  color: white;
-  background-color: teal;
+  text-align: right;
+  background-color: aquamarine;
   width: auto;
+  font-weight: bold;
+  color: teal;
 }
 
-a:hover {
+/*  "nav a:hover" Tag pseudo class Characteristics */
+nav ul li a:hover {
   font-size: 30px;
   font-weight: bold;
-  color: White;
+  color: teal;
+  font-weight: 900;
+  transition: all ease-in-out 1000ms;
 }
 
-h1 {
-  font-size: 100px;
-  color: yellow;
-  text-align: center;
+nav a:hover::before {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: teal;
+  position: absolute;
 }
 
-h2 {
-  padding: 0;
-  color: blue;
-  margin-bottom: 0;
+nav a:hover::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: teal;
+  position: absolute;
 }
+
+/*  Paragraph Web Page Characteristics */
 p {
   text-align: center;
   color: red;
-  font-size: 25px;
+  font-size: 45px;
+}
+
+/*  "Heading 1" Web Page Characteristics */
+h1 {
+  font-size: 20px;
+  color: teal;
+  font-style: oblique;
+  font-weight: 900;
+}
+
+/*  "Heading 2" Web Page Characteristics */
+h2 {
+  color: peru;
+}
+
+/*  Class "container" Characteristics */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  color: yellow;
+}
+
+/*  Psuedo "header::after" Characteristics */
+header::before {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 100%;
+  background-color: #444;
+}
+
+/*  Psuedo "header::after" Characteristics */
+header::after {
+  content: "";
+  display: table;
+  clear: both;
 }
