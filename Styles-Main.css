@@ -138,8 +138,12 @@ h1 {
 
 /*  "Heading 2" Web Page Characteristics */
 h2 {
+  text-decoration-line: underline;
+  letter-spacing: 3px;
+  position: relative;
+  display: block;
   text-align: left;
-  color: peru;
+  color:rgb(2, 90, 90);
   margin-left: 15px;
   margin-top: 10px;
 }
