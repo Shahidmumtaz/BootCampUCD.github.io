@@ -13,6 +13,7 @@ body {
   font-weight: 400;
 }
 
+/*  Header Web Page Characteristics */
 #header {
   position: absolute;
 }
@@ -49,6 +50,7 @@ nav a {
   right: 0;
 }
 
+/*  "nav a" with a mouse "hover" Characteristics that ocurrs after the object the mouse hovers overs.  I this case, a thin line is displayed under the object.*/
 nav a:hover::after {
   content: "";
   display: block;
@@ -59,11 +61,12 @@ nav a:hover::after {
   bottom: 0;
 }
 
+/*  "nav a" with a mouse "hover" characteristics that changes the color of the object to "blue".*/
 nav a:hover {
   color: rgb(0, 0, 255);
 }
 
-/*  Paragraph Web Page Characteristics -GOOD- */
+/*  Paragraph Web Page characteristics.*/
 p {
   position: relative;
   text-align: left;
@@ -73,7 +76,7 @@ p {
   text-indent: 25px;
 }
 
-/*  "Heading 1" Web Page Characteristics  -GOOD-*/
+/*  "Heading 1" Web Page Characteristics.*/
 h1 {
   text-transform: capitalize;
   font-size: 18px;
@@ -82,6 +85,7 @@ h1 {
   font-weight: 700;
 }
 
+/* Class definition called "container".  Large area within other groups (e.g. paragraphs, footer, images,...etc.) will be managed.*/
 .container {
   position: absolute;
   width: auto;
@@ -90,15 +94,17 @@ h1 {
   margin-right: auto;
 }
 
+/* Class definition called "content".  Small area contained within a "container" class.*/
 .content {
-  width: auto;
+  width: 730px;
   padding: 50px;
-  margin-left: 150px;
-  margin-top: 140px;
+  margin-left: 151px;
+  margin-top: 142px;
   background-color: aquamarine;
-  border: 1.5px solid yellow;
+  border: 1px solid yellow;
 }
 
+/*Class defined as "footer" which in contained within the class of "container.*/
 .footer {
   clear: both;
   margin-left: 150px;
@@ -107,15 +113,17 @@ h1 {
   position: relative;
   width: auto;
   height: 13px;
-  background-color: aqua;
-  border: 1.5px solid teal;
+  background-color: none;
+  /*border: 1px solid yellow;*/
   text-align: right;
 }
 
+/* Class defined as "nav_bar" which is contained within the Class "container".*/
 .nav_bar {
   float: left;
 }
 
+/* Class defined as "logo-image" which is contained within the Class "container".  This manages the two UCD logos in the upper left hand corner.*/
 .logo-image {
   position: absolute;
   display: block;
@@ -123,12 +131,28 @@ h1 {
   left: 0;
 }
 
+/* Class defined as "logo-image3" which is contained within the Class "container".  This manages the chart images on the right side of the web page.*/
 .logo-image3 {
   clear: both;
   float: right;
   position: fixed;
 }
 
+/* Class defined as "bkgd-image-bg" which manages the background image on the web page.*/
+.bkgd-image-bg {
+  position: absolute;
+}
+
+/* Class defined as "image-bg" which manages the specific background image for the web page.*/
+.image-bg {
+  border: 1px solid yellow;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 400px;
+  height: 400px;
+}
+
+/* Class defined as "image3" which manages the specific image characteristics for the image to the right of the web page.*/
 .image3 {
   border: 1px solid yellow;
   top: 50px;
@@ -138,6 +162,7 @@ h1 {
   width: 500px;
 }
 
+/* Class defined as "image1" which manages the specific image characteristics identified.*/
 .image1 {
   position: absolute;
   width: 150px;
@@ -145,6 +170,8 @@ h1 {
   left: 0;
   border: 1px solid yellow;
 }
+
+/* Class defined as "image2" which manages the specific image characteristics identified.*/
 .image2 {
   position: relative;
   width: 150px;
@@ -153,10 +180,12 @@ h1 {
   border: 1px solid yellow;
 }
 
+/* Class defined as "overlay" which sets the default transparency to "invisible."*/
 .overlay {
   opacity: 0;
 }
 
+/* This tag combines characteristics of "logo-image", "hover" and "overlay" so the second image is fully displayed.*/
 .logo-image:hover .overlay {
   opacity: 1;
   background-color: none;
