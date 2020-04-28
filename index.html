@@ -23,20 +23,28 @@
         <div class="col-md-2">
           <div class="well">
             <h5>Test Subject ID No.:</h5>
-            <select
-              id="selDataset"
-              onchange="optionChanged(this.value)"
-            ></select>
+            <select id="selDataset" onchange="optionChanged(this.value)">
+            </select>
           </div>
           <div class="panel panel-primary">
             <div class="panel-heading">
               <h3 class="panel-title">Demographic Info</h3>
             </div>
-            <div id="sample-metadata" class="panel-body"></div>
+            <div
+              id="sample-metadata"
+              onclick="clickChanged(this.value)"
+              class="panel-body"
+            >
+              <h5 id="demoInfodata">
+                Each Test Subject's Demographic Data Will Display Here After
+                Choosing a Subject ID Number Above.
+              </h5>
+            </div>
           </div>
         </div>
         <div class="col-md-5">
           <div id="bar"></div>
+          <canvas id="chartArea"></canvas>
         </div>
         <div class="col-md-5">
           <div id="gauge"></div>
@@ -51,7 +59,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="./static/app.js"></script>
+    <script src="./static/app-15HW.js"></script>
+    <script type="text/javascript" src="./static/samples.json"></script>
     <!-- <script src="./static/bonus.js"></script> -->
   </body>
 </html>
