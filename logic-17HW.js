@@ -21,7 +21,7 @@ var myIcon = L.icon({
 });
 
 //tying to be creative and funny here...couldn't get it to work
-// var myIcon2 = "face.png";
+var myIcon2 = "face.png";
 
 // Base map layers.
 var streetmap = L.tileLayer(
@@ -124,7 +124,7 @@ function createFeatures1(earthquakeData) {
     // }).addTo(myMap);
     // layer2.bindPopup(L.marker(latlngx, { icon: myIcon }).addTo(myMap));
     // L.marker(latlngx, { icon: myIcon }).addTo(myMap).on("click", {clickx});
-    L.circle(latlngx, circleStyle).addTo(myMap).bindPopup({ myIcon2 });
+    L.circle(latlngx, circleStyle).addTo(myMap).bindPopup({ myIcon });
     console.log("typeof feature2: " + typeof feature2.properties.mag);
     console.log("circle for loop magnitude: " + feature2.properties.mag);
   }
