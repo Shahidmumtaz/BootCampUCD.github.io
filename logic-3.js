@@ -12,8 +12,8 @@
 
 // * * * END OF LINK TO DATABASE * * *
 //
-// dataFile1 = "us-zip-code-latitude-and-longitude.geojson";
-dataFile2 = "P3-State-Lat-Long.geojson";
+// dataFile1 = "../Data/us-zip-code-latitude-and-longitude.geojson";
+dataFile2 = "../Data/P3-State-Lat-Long.geojson";
 
 d3.json(dataFile2, function (d) {
   createFeatures1(d);
@@ -23,23 +23,23 @@ d3.json(dataFile2, function (d) {
 // * * * GLOBAL VALUES * * *
 
 //change the default marker to a red marker consistent with emergency/earthquake
-L.Icon.Default.prototype.options.iconUrl = "population.png";
+L.Icon.Default.prototype.options.iconUrl = "../Images/population.png";
 L.Icon.Default.prototype.options.iconSize = [30, 30];
 
 //temporary changing the marker, however, couldn't get it to work like i wanted.
-var myIcon1 = L.icon({
-  iconUrl: "jobs1.jpg",
-  iconSize: [35, 35],
-  iconAnchor: [0, 0],
-  popupAnchor: [0, 0],
+var myIcon1 = L.Icon.extend({
+  options: {
+    iconUrl: "../Images/jobs1.jpg",
+    iconSize: [35, 35],
+    shadowSize: [50, 64],
+    iconAnchor: [0, 0],
+    popupAnchor: [-5, -25],
+  },
 });
 
 //tying to be creative and funny here...couldn't get it to work
-var myIcon2 = L.icon({
-  iconUrl: "face.jpg",
-  iconSize: [25, 25],
-  iconAnchor: [0, 0],
-  popupAnchor: [0, 0],
+var myIcon2 = L.Icon.extend({
+  iconUrl: "../Images/face.jpg",
 });
 
 // Base map layers.
@@ -67,7 +67,7 @@ var skyView = L.tileLayer(
 // Default map displayed on the web page
 var myMap = L.map("map", {
   center: [37.09, -95.71],
-  zoom: 3.3,
+  zoom: 3,
   layers: streetmap, //this map shows first with circles for population by State
 });
 // baseMaps
@@ -81,7 +81,7 @@ var oldLayer = "";
 function clickx(d) {
   var layer = d.target;
   alert("Marker clicked!");
-  layer.setIcon((layer.options.icon = myIcon1));
+  layer.setIcon((layer.options.icon = myIcon2));
 }
 
 // * * * END OF GLOBAL VALUES * * *
@@ -129,13 +129,21 @@ function createFeatures1(earthquakeData) {
     var radius1 = feature1.properties.UR_Pop * 0.0025;
     var circleStyle1 = {
       fillOpacity: 1,
-      color: "yellow",
-      fillColor: "black",
+      color: "red",
+      // fillColor: "red",
       radius: radius1,
     };
     // console.log("radiusx: " + radiusx);
-
     L.circle(latlng1, circleStyle1).addTo(myMap);
+    var markerX2 = L.marker(latlng1, { icon: myIcon1 }); //.on("click", { clickx });
+    markerX2.on("click", function (e) {
+      if (myMap.hasLayer(markerX2)) {
+        markerX2.remove(myMap);
+      } else {
+        markerX2.addTo(myMap);
+      }
+    });
+    // L.marker(latlng1, { icon: myIcon2 }).addTo(myMap);
   }
 
   // * * * END   This is Statistics for the Population layer icons * * *
@@ -184,7 +192,14 @@ function createFeatures1(earthquakeData) {
     //   radius: radiusx,
     // }).addTo(myMap);
     // layer2.bindPopup(L.marker(latlngx, { icon: myIcon }).addTo(myMap));
-    L.marker(latlng2, { icon: myIcon2 }).on("click", { clickx });
+    var markerX2 = L.marker(latlng2, { icon: myIcon1 }); //.on("click", { clickx });
+    markerX2.on("click", function (e) {
+      if (myMap.hasLayer(markerX2)) {
+        markerX2.remove(myMap);
+      } else {
+        markerX2.addTo(myMap);
+      }
+    });
     // L.circle(latlng2, circleStyle2).addTo(myMap).bindPopup({ myIcon2 });
   }
 
@@ -236,6 +251,15 @@ function createFeatures1(earthquakeData) {
   var earthquakes1 = L.geoJSON(earthquakeData, {
     onEachFeature: eachLayersFeature1,
   });
+
+  // var markerX2 = L.marker(latlng2, { icon: myIcon1 }); //.on("click", { clickx });
+  // markerX2.on("click", function (e) {
+  //   if (myMap.hasLayer(markerX2)) {
+  //     markerX2.remove(myMap);
+  //   } else {
+  //     markerX2.addTo(myMap);
+  //   }
+  // });
 
   var earthquakes2 = L.geoJSON(earthquakeData, {
     onEachFeature: eachLayersFeature2,
