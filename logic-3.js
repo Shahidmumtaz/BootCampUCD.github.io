@@ -10,6 +10,12 @@
 
 //  * * * LINK TO DATABASE * * *
 
+const { Client } = require("pg");
+var connectionString = "postgres://postgres:postgres@localhost:5432/project_2";
+const client = new Client({
+  connectionString: connectionString,
+});
+
 // * * * END OF LINK TO DATABASE * * *
 //
 // dataFile1 = "../Data/us-zip-code-latitude-and-longitude.geojson";
