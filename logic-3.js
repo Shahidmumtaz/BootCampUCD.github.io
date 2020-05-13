@@ -23,7 +23,7 @@ d3.json(dataFile2, function (d) {
 // * * * GLOBAL VALUES * * *
 
 //change the default marker to a red marker consistent with emergency/earthquake
-L.Icon.Default.prototype.options.iconUrl = "../Images/population.png";
+L.Icon.Default.prototype.options.iconUrl = "population.png";
 L.Icon.Default.prototype.options.iconSize = [30, 30];
 
 //temporary changing the marker, however, couldn't get it to work like i wanted.
