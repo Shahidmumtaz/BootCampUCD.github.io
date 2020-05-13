@@ -12,8 +12,8 @@
 
 // * * * END OF LINK TO DATABASE * * *
 //
-// dataFile1 = "../Data/us-zip-code-latitude-and-longitude.geojson";
-dataFile2 = "../Data/P3-State-Lat-Long.geojson";
+// dataFile1 = "us-zip-code-latitude-and-longitude.geojson";
+dataFile2 = "P3-State-Lat-Long.geojson";
 
 d3.json(dataFile2, function (d) {
   createFeatures1(d);
@@ -28,7 +28,7 @@ L.Icon.Default.prototype.options.iconSize = [30, 30];
 
 //temporary changing the marker, however, couldn't get it to work like i wanted.
 var myIcon1 = L.icon({
-  iconUrl: "../Images/jobs1.jpg",
+  iconUrl: "jobs1.jpg",
   iconSize: [35, 35],
   iconAnchor: [0, 0],
   popupAnchor: [0, 0],
@@ -36,7 +36,7 @@ var myIcon1 = L.icon({
 
 //tying to be creative and funny here...couldn't get it to work
 var myIcon2 = L.icon({
-  iconUrl: "../Images/face.jpg",
+  iconUrl: "face.jpg",
   iconSize: [25, 25],
   iconAnchor: [0, 0],
   popupAnchor: [0, 0],
