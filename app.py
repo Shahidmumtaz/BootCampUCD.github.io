@@ -37,7 +37,7 @@ Base.prepare(engine,reflect = True)
 @app.route("/")
 def index():
     """Return the homepage."""
-    return render_template("index-p3-1.html")
+    return render_template("index-P3-1.html")
 
 # Define the route to "/unemployment"
 @app.route("/unemployment")
