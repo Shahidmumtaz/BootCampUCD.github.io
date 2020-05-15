@@ -14,7 +14,7 @@ app = Flask(__name__)
 # Database Setup
 #################################################
 # Identify the database path
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgres:///db/project_2.sql"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgres:///db/project_2"
 # Make it so that it doesn't track modifications
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
