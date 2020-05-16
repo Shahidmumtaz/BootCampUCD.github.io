@@ -35,12 +35,12 @@ function unemploymentData(unemployment_state) {
     // Use `d3.json` to fetch the data and turn it into the JSON format
     d3.json(url).then(function(unemployment_state){
       // Use d3 to select the panel with id of `#unemployment`
-      var unemployment_state = d3.select("#unemployment");
+      var unemployment_state = d3.select("#unemployment_state");
       // Use `.html("") to clear any existing metadata
-      unemployment.html("");
+      unemployment_state.html("");
       // Use `Object.entries` to add each key and value pair to the panel
       Object.entries(unemployment_state).forEach(function ([key, value]) {
-        var row = unemployment.append("p");
+        var row = unemployment_state.append("p");
         row.text(`${key}: ${value}`);
       });
     }
