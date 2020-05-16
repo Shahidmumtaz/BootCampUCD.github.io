@@ -26,6 +26,45 @@ d3.json(dataFile2, function (d) {
   console.log("line 20: " + d);
 });
 
+// We need to repeat the below code for each @app.route from app.py to connect to JS
+// But first we need to determine the data we want to pull out of each of the tables in the database
+// Define a function that depends on a variable unemployment. This function will display the keys and values from the unemployment by state informationthat has been queried in the Python app
+function unemploymentData(unemployment_state) {
+    // Define the path to the  data
+    var url = `/unemployment_state/${unemployment_state}`;
+    // Use `d3.json` to fetch the data and turn it into the JSON format
+    d3.json(url).then(function(unemployment_state){
+      // Use d3 to select the panel with id of `#unemployment`
+      var unemployment_state = d3.select("#unemployment");
+      // Use `.html("") to clear any existing metadata
+      unemployment.html("");
+      // Use `Object.entries` to add each key and value pair to the panel
+      Object.entries(unemployment_state).forEach(function ([key, value]) {
+        var row = unemployment.append("p");
+        row.text(`${key}: ${value}`);
+      });
+    }
+  );
+  }
+
+function GDPData(GDP_state) {
+    // Define the path to the  data
+    var url = `/GDP_state`;
+    // Use `d3.json` to fetch the data and turn it into the JSON format
+    d3.json(url).then(function(unemployment_state){
+      // Use d3 to select the panel with id of `#GDP`
+      var GDP_state = d3.select("#GDP");
+      // Use `.html("") to clear any existing metadata
+      GDP.html("");
+      // Use `Object.entries` to add each key and value pair to the panel
+      Object.entries(GDP_state).forEach(function ([key, value]) {
+        var row = GDP.append("p");
+        row.text(`${key}: ${value}`);
+      });
+    }
+  );
+  }
+
 // * * * GLOBAL VALUES * * *
 
 //change the default marker to a red marker consistent with emergency/earthquake
