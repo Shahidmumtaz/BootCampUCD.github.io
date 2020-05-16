@@ -27,7 +27,7 @@ d3.json(dataFile2, function (d) {
 });
 
 // We need to repeat the below code for each @app.route from app.py to connect to JS
-// But first we need to determine the data we want to pull out of each of the tables in the database
+// But first we need to determine the data we want to pull out  from each of the tables in the database
 // Define a function that depends on a variable unemployment. This function will display the keys and values from the unemployment by state informationthat has been queried in the Python app
 function unemploymentData(unemployment_state) {
     // Define the path to the  data
