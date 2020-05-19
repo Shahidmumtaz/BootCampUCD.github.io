@@ -29,36 +29,36 @@ d3.json(dataFile2, function (d) {
 // We need to repeat the below code for each @app.route from app.py to connect to JS
 // But first we need to determine the data we want to pull out  from each of the tables in the database
 // Define a function that depends on a variable unemployment. This function will display the keys and values from the unemployment by state informationthat has been queried in the Python app
-function unemploymentData(unemployment_state) {
+function unemploymentData(unemployment) {
     // Define the path to the  data
-    var url = `/unemployment_state/${unemployment_state}`;
+    var url = `/unemployment/${unemployment}`;
     // Use `d3.json` to fetch the data and turn it into the JSON format
-    d3.json(url).then(function(unemployment_state){
+    d3.json(url).then(function(unemployment){
       // Use d3 to select the panel with id of `#unemployment`
-      var unemployment_state = d3.select("#unemployment_state");
+      var unemployment = d3.select("#unemployment");
       // Use `.html("") to clear any existing metadata
-      unemployment_state.html("");
+      unemployment.html("");
       // Use `Object.entries` to add each key and value pair to the panel
-      Object.entries(unemployment_state).forEach(function ([key, value]) {
-        var row = unemployment_state.append("p");
+      Object.entries(unemployment).forEach(function ([key, value]) {
+        var row = unemployment.append("p");
         row.text(`${key}: ${value}`);
       });
     }
   );
   }
 
-function GDPData(GDP_state) {
+function StateData(State_Lat_Long) {
     // Define the path to the  data
-    var url = `/GDP_state`;
+    var url = `/State_Lat_Long`;
     // Use `d3.json` to fetch the data and turn it into the JSON format
-    d3.json(url).then(function(unemployment_state){
+    d3.json(url).then(function(State_Lat_Long){
       // Use d3 to select the panel with id of `#GDP`
-      var GDP_state = d3.select("#GDP");
+      var State_Lat_Long = d3.select("#State");
       // Use `.html("") to clear any existing metadata
-      GDP.html("");
+      State_Lat_Long.html("");
       // Use `Object.entries` to add each key and value pair to the panel
-      Object.entries(GDP_state).forEach(function ([key, value]) {
-        var row = GDP.append("p");
+      Object.entries(State_Lat_Long).forEach(function ([key, value]) {
+        var row = State.append("p");
         row.text(`${key}: ${value}`);
       });
     }
