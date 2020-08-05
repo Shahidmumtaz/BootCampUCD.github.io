@@ -1,4 +1,4 @@
-# COVID-19 Unemployment Analysis
+# COVID-19 Analysis
 
 This final project was a team effort which looks at population statistics to identify any correlation between education, income, and ethnicity, as it relates to COVID deaths.
 
